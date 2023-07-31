@@ -1,56 +1,90 @@
 @import "../../css-config/mixins.scss";
 
+
 .main-header {
     width: 100%;
     padding: 0 20px;
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 77%);
     color: white;
+    background: linear-gradient(90deg, rgba(63, 94, 251, 1) 19%, rgba(252, 70, 107, 1) 84%);
+    // background: radial-gradient(circle, rgba(69,18,128,1) 15%, rgba(0,0,0,1) 77%);
+
     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
     z-index: 99;
+
     @include md {
-        padding: 0 40px;
+        background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 77%);
+        // background: radial-gradient(circle, rgba(69,18,128,1) 15%, rgba(0,0,0,1) 77%);
+
     }
-    .header-content{
+
+    .header-content {
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: 1200px;
         height: 50px;
         margin: 0 auto;
+
         @include md {
+            padding: 0 40px;
             height: 80px;
         }
+
         .left {
             list-style: none;
             gap: 20px;
             display: none;
-            @include md{
+
+            @include md {
                 display: flex;
-                
+
             }
-            li{
-                font-size: 14px;
+
+            li {
+                font-size: 15px;
                 font-weight: 600;
                 text-transform: uppercase;
                 cursor: pointer;
             }
         }
+
         .center {
             font-weight: 700;
             font-size: larger;
             cursor: pointer;
             text-transform: uppercase;
+
+            @include md {
+                position: absolute;
+                font-size: 35px;
+                left: 50%;
+                transform: translateX(-50%);
+
+            }
         }
+
         .right {
             display: flex;
             gap: 20px;
-            align-items: center;  
+            align-items: center;
+
+            @include md {
+                gap: 25px;
+
+            }
+
             svg {
                 font-size: 22px;
                 cursor: pointer;
-            }  
+
+                @include md {
+                    font-size: 24px;
+                }
+            }
+
             .cart-icon {
                 position: relative;
+
                 span {
                     position: absolute;
                     font-size: 12px;
@@ -61,12 +95,31 @@
                     border-radius: 10px;
                     top: -5px;
                     right: -12px;
-                    line-height: 1  ;
-
-                                    
+                    line-height: 1;
                 }
             }
         }
     }
 
+    &.sticky-header {
+        position: sticky;
+        top: 0;
+        max-width: 1024px;
+        left: 15%;
+        border-radius: 30px;
+        overflow: hidden;
+        transform: translateY(-80px);
+        animation: stickyness 0.5s ease forwards;
+    }
+
+}
+
+@keyframes stickyness {
+    0% {
+        transform: translateY(-80px);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
 }

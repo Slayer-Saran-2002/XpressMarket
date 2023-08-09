@@ -1,19 +1,21 @@
 @import "../../css-config/mixins.scss";
-
+:root{
+    --mdcolor : radial-gradient(circle, rgba(69,18,128,1) 15%, rgba(0,0,0,1) 77%);
+    --hcolor: linear-gradient(90deg, rgba(69,18,128,1) 15%, rgba(0,0,0,1) 77%);
+    // --hcolor : radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 77%);
+}
 
 .main-header {
     width: 100%;
     padding: 0 20px;
     color: white;
-    background: linear-gradient(90deg, rgba(63, 94, 251, 1) 19%, rgba(252, 70, 107, 1) 84%);
-    // background: radial-gradient(circle, rgba(69,18,128,1) 15%, rgba(0,0,0,1) 77%);
+    background: var(--hcolor,#000000);
 
     border-bottom: 1px solid rgba($color: #000000, $alpha: 0.1);
     z-index: 99;
 
     @include md {
-        background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 77%);
-        // background: radial-gradient(circle, rgba(69,18,128,1) 15%, rgba(0,0,0,1) 77%);
+        background: var(--mdcolor,#000000);
 
     }
 
@@ -105,7 +107,7 @@
         position: sticky;
         top: 0;
         max-width: 1024px;
-        left: 15%;
+        left: 14%;
         border-radius: 30px;
         overflow: hidden;
         transform: translateY(-80px);

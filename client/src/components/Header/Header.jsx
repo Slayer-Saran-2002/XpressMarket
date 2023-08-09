@@ -11,7 +11,7 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const handlescroll = () => {
         const offset = window.scrollY;
-        console.log(offset);
+        // console.log(offset);
         if (offset > 100) {
             setScrolled(true);
         }

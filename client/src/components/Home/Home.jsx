@@ -3,8 +3,7 @@ import "./Banner/Banner"
 import Banner from "./Banner/Banner";
 const Home = () => {
     return <div className="home">
-        home 
-        {/* <Banner/> */}
+        <Banner/>
     </div>;
 };
 
